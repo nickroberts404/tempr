@@ -1,0 +1,15 @@
+{
+  "name": "huba",
+  "version": "1.0.0",
+  "description": "A very tiny tool that reads current directories package.json and trys to open the associated Github page.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nick Roberts",
+  "preferGlobal": true,
+  "bin": {"huba": "index.js"},
+  "license": "ISC",
+  "dependencies": {
+  }
+}
