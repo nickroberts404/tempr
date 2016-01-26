@@ -8,8 +8,11 @@
   "keywords": [],
   "author": "Nick Roberts",
   "preferGlobal": true,
-  "bin": {"tempr": "index.js"},
+  "bin": {
+    "tempr": "index.js"
+  },
   "license": "ISC",
   "dependencies": {
+    "inquirer": "^0.11.4"
   }
 }
