@@ -13,7 +13,7 @@ var questions = [
 	{type: 'list', name: 'template', message: 'Choose a template..', choices: options.get_choices},
 	{type: 'input', name: 'fname', message: 'Name of directory?', when: (ans)=> templates[ans.template].is_dir },
 	{type: 'input', name: 'fname', message: 'Name of file? (no extension)', when: (ans)=> !templates[ans.template].is_dir}
-]
+];
 
 inq.prompt(questions, function(answers){
 	var template = templates[answers.template];
