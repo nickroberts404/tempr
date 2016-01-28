@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Your Name",
+  "author": "Nick Roberts",
   "preferGlobal": true,
   "bin": {"neatTool": "index.js"},
   "license": "ISC",

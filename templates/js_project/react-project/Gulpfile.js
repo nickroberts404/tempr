@@ -7,6 +7,7 @@ const source 		= require('vinyl-source-stream');
 const buffer		= require('vinyl-buffer');
 const connect 		= require('gulp-connect');
 const open 			= require('gulp-open');
+const babel 		= require('babelify');
 
 const port = 2000;
 
@@ -23,9 +24,10 @@ gulp.task('dev-sass', ()=> {
 gulp.task('dev-scripts', ()=> {
 	return browserify('./src/js/app.js')
 		.on('error', handle_error)
+		.transform(babel, {presets: ["react", "es2015"]}) 
 		.bundle()
 		.on('error', handle_error)
-		.pipe(source('orion.js'))
+		.pipe(source('app.js'))
 		.on('error', handle_error)
 		.pipe(gulp.dest('./dist/js'))
 		.pipe(connect.reload())
@@ -51,7 +53,7 @@ gulp.task('pro-sass', ()=> {
 gulp.task('pro-scripts', ()=> {
 	return browserify('./src/js/app.js')
 		.bundle()
-		.pipe(source('orion.js'))
+		.pipe(source('app.js'))
 		.pipe(buffer())
 		.pipe(minijs())
 		.pipe(gulp.dest('./dist/js'));
